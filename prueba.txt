@@ -1,0 +1,17 @@
+clase {
+<<==>>
+100000
+    @bertyu = 10.5 ;
+    si ( @x1 &sino %si SINO >= 5.3.8 5.) {
+        escribir("Hola");
+.8
+si sino mientras
+leer escribir
++++ --- *= += || && &
+-100
+-132.2  
+"Hola
+mundo"
+    }
+    hola
+}

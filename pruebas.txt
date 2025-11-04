@@ -1,0 +1,96 @@
+// ===================================
+// 1. COMENTARIOS y Palabras Reservadas
+// ===================================
+clase @Programa;
+100000 +++ // --- *= /= += 
+&& & ||
+var %saldo, &edad;
+metodo @Main() {
+    leer $nombre;
+    si (edad >= 18.67) {
+        escribir "Es mayor.;
+        mientras (saldo > 0) {
+            saldo -= 100.5;
+            // Un comentario en medio
+        }
+    } sino {
+        switch (edad) {
+            encaso 17: { salir; }
+            default: { regresar; }
+        }
+    }
+}
+ejecutar @Programa;
+
+
+// ===================================
+// 2. Identificadores (Longitud 2 a 8, solo letras después del control)
+// ===================================
+@ClaMet;  // Clase/Método (8 caracteres, OK)
+@M;       // Clase/Método (2 caracteres, OK)
+$Cadena;  // String (OK)
+&EntNum;  // Entero (OK)
+%RealVar; // Real (OK)
+
+// IDENTIFICADORES INVÁLIDOS (deberían dar error)
+@tooLongIDZZ;
+&Con_Guion; // Contiene guion bajo
+@1InicioNum; // Inicia con número después del @
+
+// ===================================
+// 3. Constantes Enteras (Rango -32768 a 32767)
+// ===================================
+// Enteras válidas
+&A = 1234;
+&B = -500;
+&C = 32767;
+&D = -32768;
+
+// Enteras fuera de rango (deben ser reconocidas como CONST_REAL)
+// Nota: Tu lógica debe marcar estos como CONST_REAL
+&Alto = 32768;
+&Bajo = -32769;
+
+// ===================================
+// 4. Constantes Reales
+// ===================================
+%R1 = 5.0;     // Entero.fracción
+%R2 = -0.55;   // Signo.fracción
+%R3 = .123;    // .fracción
+%R4 = 10.123;
+// Real Inválido (prohibido terminar en punto, debería dar error o ser separado)
+// %R_Inv = 10.;  // Si la regex es estricta, la parte '.' no debe ser reconocida
+
+// ===================================
+// 5. Constantes String (Cadena)
+// ===================================
+$S1 = "Hola mundo. ";
+$S2 = "Cadena con caracteres especiales: ¡@#$%^&*()";
+
+// ===================================
+// 6. Operadores y Caracteres Especiales
+// ===================================
+// Aritméticos:
+limpiar;
+posxy(10, 20);
+&a = 5 * 3 / 2 % 1;
+&b = a + 10;
+a++; b--;
+a += b; b -= 1;
+a *= 2; b /= 3;
+
+// Relacionales:
+if (a < 10) { }
+if (a <= b) { }
+if (a > 10) { }
+if (a >= b) { }
+if (a == 5) { }
+if (a != 0) { }
+
+// Lógicos:
+if ((a == 5) && (b != 0) || !a) { }
+
+// Caracteres Especiales:
+repite {
+    // ; [ ] , : ( ) { } ya se usaron
+}
