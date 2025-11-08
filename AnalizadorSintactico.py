@@ -1,6 +1,5 @@
 # ================================================================
 # ANALIZADOR SINTÁCTICO - Basado en Diagramas de Sintaxis (Agosto 2025)
-# Autor: Adaptado a la gramática de MC Juan Fraustro de la O
 # ================================================================
 
 import re
@@ -68,7 +67,7 @@ def cargar_tokens_desde_tabla(ruta):
                 continue
             tipo = TOKEN_MAP.get(codigo, f"DESCONOCIDO_{codigo}")
             tokens.append(Token(type=tipo, lexeme=lexema, line=linea))
-    print(f"📄 {len(tokens)} tokens cargados correctamente desde {ruta}\n")
+    print(f"{len(tokens)} tokens cargados correctamente desde {ruta}\n")
     return tokens
 
 # ================================================================
@@ -274,32 +273,31 @@ class Parser:
     # ============================================================
     def mostrar_reporte(self):
         if not self.errores:
-            print("✅ Análisis sintáctico correcto (sin errores)\n")
+            print("Analisis sintactico correcto (sin errores)\n")
         else:
-            print("❌ Se encontraron errores sintácticos:\n")
+            print("Se encontraron errores sintacticos:\n")
             for e in self.errores:
                 print("   -", e)
             print(f"\nTotal de errores: {len(self.errores)}")
-            # guardar en archivo
             with open("errores_sintacticos.txt", "w", encoding="utf-8") as f:
-                f.write("ERRORES SINTÁCTICOS ENCONTRADOS\n")
+                f.write("ERRORES SINTACTICOS ENCONTRADOS\n")
                 f.write("-" * 50 + "\n")
                 for e in self.errores:
                     f.write(e + "\n")
                 f.write(f"\nTotal de errores: {len(self.errores)}\n")
-            print("\n📁 Archivo generado: errores_sintacticos.txt")
+            print("\nArchivo generado: errores_sintacticos.txt")
 
 # ================================================================
 # PUNTO DE ENTRADA
 # ================================================================
 if __name__ == "__main__":
-    print("=== ANALIZADOR SINTÁCTICO ===")
+    print("=== ANALIZADOR SINTACTICO ===")
     ruta = input("Ruta del archivo tabla_tokens.txt: ").strip().strip('"')
     try:
         tokens = cargar_tokens_desde_tabla(ruta)
         parser = Parser(tokens)
         parser.parse()
     except FileNotFoundError:
-        print("❌ No se encontró el archivo especificado.")
+        print("No se encontro el archivo especificado.")
     except Exception as e:
-        print("⚠️ Error inesperado:", e)
+        print("Error inesperado:", e)
