@@ -1,0 +1,6 @@
+ERRORES SINTÁCTICOS ENCONTRADOS
+--------------------------------------------------
+[L27] Estatuto no reconocido — encontrado '%saldo'
+[L40] Estatuto no reconocido — encontrado 'encaso'
+
+Total de errores: 2
