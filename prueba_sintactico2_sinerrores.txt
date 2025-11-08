@@ -1,0 +1,44 @@
+// Programa de prueba #2 - compatible con los diagramas del Proyecto Sintaxis AD 2025
+// Demuestra el uso correcto de estructuras válidas del lenguaje
+
+clase @Escuela {
+
+    // Declaración de variables
+    var entero &edad;
+    var cadena $nombre;
+    var real %prom;
+
+    // Método principal
+    vacio @Inicio() {
+        leer $nombre;
+        leer &edad;
+
+        si (&edad >= 18) {
+            escribir("Alumno mayor de edad");
+        }
+        sino {
+            escribir("Alumno menor de edad");
+            salir;
+        }
+
+        mientras (%prom < 10) {
+            escribir("Revisando promedio...");
+            repite {
+                escribir("Calculando promedio...");
+            } mientras (%prom < 8);
+            regresar;
+        }
+
+        switch (&edad) {
+        }
+
+        escribir("Proceso finalizado");
+        regresar;
+    }
+
+    // Segundo método
+    metodo @Reg() {
+        escribir("Registro completado");
+        ejecutar @Inicio;
+    }
+}

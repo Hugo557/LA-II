@@ -1,0 +1,4 @@
+Línea 9: '%promedio' no es un token válido.
+Línea 24: '%promedio' no es un token válido.
+Línea 28: '%promedio' no es un token válido.
+Línea 40: '@Registro' no es un token válido.

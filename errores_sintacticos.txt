@@ -1,6 +1,7 @@
 ERRORES SINTÁCTICOS ENCONTRADOS
 --------------------------------------------------
-[L27] Estatuto no reconocido — encontrado '%saldo'
-[L40] Estatuto no reconocido — encontrado 'encaso'
+[L9] Identificador inválido en variable — encontrado ';'
+[L12] Falta ';' al final de la declaración — encontrado 'vacio'
+[L14] Falta '}' al final de la clase — encontrado 'leer'
 
-Total de errores: 2
+Total de errores: 3
