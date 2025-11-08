@@ -1,0 +1,53 @@
+// Programa de prueba oficial para el analizador léxico y sintáctico
+// Compatible con la definición de Léxico (Agosto 2025)
+
+clase @Banco {
+
+    // Variables correctamente declaradas
+    var entero &edad;
+    var real %saldo, %tasa;
+    var cadena $nombre;
+
+    // Método principal
+    vacio @Main() {
+        leer $nombre;
+
+        si (&edad >= 18) {
+            escribir("Bienvenido al sistema bancario");
+        }
+        sino {
+            escribir("Acceso denegado");
+            salir;
+        }
+
+        // Ciclo mientras
+        mientras (%saldo > 0) {
+            escribir("Saldo actual: ");
+            escribir(%saldo);
+            %saldo -= 100;
+        }
+
+        // Repite ... mientras
+        repite {
+            escribir("Operación en curso...");
+        } mientras (%saldo < 500);
+
+        // Estructura switch con casos
+        switch (&edad) {
+            encaso 18: {
+                escribir("Cliente nuevo");
+            }
+            encaso 30: {
+                escribir("Cliente preferente");
+            }
+        }
+
+        regresar;
+    }
+
+    // Otro método
+    metodo @Actual() {
+        escribir("Actualizando datos...");
+        ejecutar @Main;
+    }
+}
