@@ -1,7 +1,8 @@
-ERRORES SINTÁCTICOS ENCONTRADOS
+ERRORES SINTACTICOS ENCONTRADOS
 --------------------------------------------------
-[L9] Identificador inválido en variable — encontrado ';'
-[L12] Falta ';' al final de la declaración — encontrado 'vacio'
-[L14] Falta '}' al final de la clase — encontrado 'leer'
+[L-1] Se esperaba 'clase' — encontrado 'EOF'
+[L-1] Se esperaba identificador de clase (@id) — encontrado 'EOF'
+[L-1] Falta '{' después de clase — encontrado 'EOF'
+[L-1] Falta '}' al final de la clase — encontrado 'EOF'
 
-Total de errores: 3
+Total de errores: 4

@@ -55,20 +55,25 @@ def cargar_tokens_desde_tabla(ruta):
         for line in f:
             if not line.strip() or line.startswith('-') or line.startswith('LEXEMA'):
                 continue
-            lexema = line[0:20].strip()
-            token_str = line[20:30].strip()
-            linea_str = line[40:50].strip()
-            if not token_str or not linea_str:
+
+            partes = line.strip().split("\t")
+            if len(partes) != 4:
                 continue
+
+            lexema, token_str, pts_str, linea_str = partes
+
             try:
                 codigo = int(token_str)
                 linea = int(linea_str)
             except ValueError:
                 continue
+
             tipo = TOKEN_MAP.get(codigo, f"DESCONOCIDO_{codigo}")
             tokens.append(Token(type=tipo, lexeme=lexema, line=linea))
+
     print(f"{len(tokens)} tokens cargados correctamente desde {ruta}\n")
     return tokens
+
 
 # ================================================================
 # ANALIZADOR SINTÁCTICO CON RECUPERACIÓN DE ERRORES
